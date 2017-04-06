@@ -1,0 +1,40 @@
+
+#row1{
+    border-bottom: 4px solid black;
+}
+#row3{
+    border-top: 4px solid black;
+}
+
+#column1{
+  border-right: 4px solid black;
+}
+#column2{
+  border-left: 4px solid black;
+}
+table{
+  margin:25%;
+
+}
+td {
+  width: ;
+
+}
+h2{
+
+}
+img{
+  width: 250px;
+}
+
+#gray1 {
+  display: none;
+}
+
+#gray2 {
+  display: none;
+}
+
+#gray3 {
+  display: none;
+}
