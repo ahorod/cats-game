@@ -1,53 +1,94 @@
 // business logic
+function Board (row, col){
+  this.row = row;
+  this.col = col;
+  this.spaces = [];
+  for (var i=0; i < this.row; i++){
+    for (var j=0; j< this.col; j++){
+      var space = new Space(i,j);
+      this.spaces.push(space);
+    }
+  }
+}
 
-//
-// function Space(){
-//   this.markedBy = markedBy;
-// // }
-//
-// var Space= new Space ()
+function Space (row, col) {
+  this.row = row;
+  this.col = col;
+  this.markedBy = 0;
+}
 
+var myBoard = new Board (3,3);
+// myBoard.spaces[0].markedBy = "X";
+// myBoard.spaces[8].markedBy = "O";
+// console.log(myBoard);
+// console.log(myBoard.spaces);
 
+function buttonClick(buttonid){
+  var cell = myBoard.spaces[buttonid];
+  console.log(buttonid);
+  cell.markedBy = "X"
+}
 
-var board = {row1:[0 ,0, 0],
-            row2:[0, 0, 0],
-            row3:[0, 0, 0]}
-
-// board.prototype.getCoordinate = function(){
-//   for (i=0; i < this.row1; i++){
-//     if this.row1[i] !== 0{
-//
-//     }
-//   }
-//   return
-// }
-
-//
-// var spaceMarker = function(){
-//   board.row1[0] = 1
-//   console.log(board.row1)
-//
-// }
 
 //User Interface
-
+function render(){
+  for (var i=0; i < myBoard.spaces.length; i++){
+    var cell = myBoard.spaces[i];
+    if (cell.markedBy === "X"){
+      $("#cell-"+i).html('<img src="img/kitty.png" alt="blackcat">');
+    }
+    else if (cell.markedBy === "O") {
+      $("#cell-"+i).html('<img src="img/whitecat.png" alt="blackcat">');
+    }
+  }
+}
 $(function(){
+  render();
 
-  $("#cell1").click(function(event){
-    event.preventDefault();
-    $("#cell1").hide();
-    $("#gray1").toggle();
-  });
-  $("#cell2").click(function(event){
-    event.preventDefault();
-    alert ("hi");
-    $("#cell2").hide();
-    $("#gray2").toggle();
-  });
-  $("#cell3").click(function(event){
-    event.preventDefault();
-    alert ("hi");
-    $("#cell3").hide();
-    $("#gray3").toggle();
-  });
-})
+    $("#cell-0").click(function(event){
+      event.preventDefault();
+      buttonClick(0);
+      render();
+      });
+    $("#cell-1").click(function(event){
+      event.preventDefault();
+      buttonClick(1);
+      render();
+      });
+    $("#cell-2").click(function(event){
+      event.preventDefault();
+      buttonClick(2);
+      render();
+      });
+    $("#cell-3").click(function(event){
+      event.preventDefault();
+      buttonClick(3);
+      render();
+      });
+    $("#cell-4").click(function(event){
+      event.preventDefault();
+      buttonClick(4);
+      render();
+      });
+    $("#cell-5").click(function(event){
+      event.preventDefault();
+      buttonClick(5);
+      render();
+      });
+    $("#cell-6").click(function(event){
+      event.preventDefault();
+      buttonClick(6);
+      render();
+      });
+    $("#cell-7").click(function(event){
+      event.preventDefault();
+      buttonClick(7);
+      render();
+      });
+    $("#cell-8").click(function(event){
+      event.preventDefault();
+      buttonClick(8);
+      render();
+      });
+
+});
